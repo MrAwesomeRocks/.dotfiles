@@ -1,0 +1,23 @@
+# Includes for custom config files:
+[includeIf "gitdir:**/BitBucket/**/.git"]
+	path = ~/.gitconfig_bitbucket
+
+[includeIf "gitdir:**/GitHub/**/.git"]
+	path = ~/.gitconfig_github
+[core]
+	excludesfile = C:/Users/ninom/.gitignore_global
+	autocrlf = input
+	attributesfile = C:\\Users\\ninom\\.gitattributes_global
+
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gui]
+	recentrepo = C:/Users/ninom/Desktop/Programing/BitBucket/Python/discord-bots/roycemorebot
+[user]
+	name = Nino Maruszewski
+	email = nino.maruszewski@gmail.com
