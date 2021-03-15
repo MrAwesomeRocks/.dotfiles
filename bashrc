@@ -121,9 +121,19 @@ export TLDR_QUOTE='default'
 export TLDR_DESCRIPTION='green'
 export TLDR_CODE='red'
 export TLDR_PARAM='cyan'
+export TLDR_LANGUAGE='en'
 
 # fix colors
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
+# SDKMAN! and Java stuff
+export GRADLE_HOME=~/.sdkman/candidates/gradle/current
+export JAVA_HOME=~/.sdkman/candidates/java/current
+export M2_HOME=~/.sdkman/candidates/maven/current
+export MAVEN_HOME=$M2_HOME
+
+# Pipenv stuff
+export PIPENV_VENV_IN_PROJECT=true
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/c/Users/ninom/.sdkman"

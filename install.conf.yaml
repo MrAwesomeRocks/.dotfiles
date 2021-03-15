@@ -25,3 +25,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [if ! which tldr; then curl -o /bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr && chmod +x /bin/tldr; fi, Downloading TLDR.]
+  - [curl -s "https://get.sdkman.io" | bash, Downloading SDKMAN!]
