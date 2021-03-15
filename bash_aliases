@@ -36,7 +36,7 @@ fi
 # ls/tree
 alias ll="ls -lh"
 alias la="ls -Alh"
-alias trea=tree -a
+alias trea="tree -a"
 
 # apt
 alias agi="sudo apt-get install "
