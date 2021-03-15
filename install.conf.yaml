@@ -1,22 +1,27 @@
+- defaults:
+    link:
+        relink: true
+
 - clean: ['~']
 
 - link:
+    ~/.bash_aliases: bash_aliases
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
+    ~/.emacs: emacs
+    ~/.gitattributes_global: gitattributes_global
     ~/.gitconfig: gitconfig
+    ~/.gitconfig_bitbucket: gitconfig_bitbucket
+    ~/.gitconfig_github: gitconfig_github
+    ~/.gitignore_global: gitignore_global
+    ~/.minttyrc: minttyrc
     ~/.ssh/config:
         path: ssh/config
         create: true
+    ~/.tldrrc: tldrrc
+    ~/.xmaximarc: xmaximarc
     ~/.zshrc: zshrc
 
-
-- clean: ['~']
-
-- link:
-
-
-
-
-- link:
-
-
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [if ! which tldr; then curl -o /bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr && chmod +x /bin/tldr; fi, Downloading TLDR.]
