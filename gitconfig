@@ -8,6 +8,7 @@
 	excludesfile = C:/Users/ninom/.gitignore_global
 	autocrlf = input
 	attributesfile = C:/Users/ninom/.gitattributes_global
+	editor = nano
 
 [commit]
 	gpgsign = true

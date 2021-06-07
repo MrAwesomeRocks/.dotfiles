@@ -58,5 +58,13 @@ alias cp="cp -i"
 # clean directory
 alias cleanup="/bin/rm -f *# *~"
 
+# IPython
+if [[ -z $(uname -s | grep -E "(MINGW|MSYS)") ]]; then
+    # Windows
+    alias ipy=ipython.exe
+else
+    alias ipy=ipython
+fi
+
 # CPU temp
 alias cputemp="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"

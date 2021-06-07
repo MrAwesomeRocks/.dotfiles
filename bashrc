@@ -136,7 +136,7 @@ export MAVEN_HOME=$M2_HOME
 export PIPENV_VENV_IN_PROJECT=true
 
 # ASDF stuff
-if [[ -z $(uname -s | grep MINGW) ]]; then
+if [[ -z $(uname -s | grep -E "(MINGW|MSYS)") ]]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
 fi
