@@ -5,7 +5,7 @@ My dotfiles!
 ## Instructions
 1. Get git repo
     ```sh
-    $ git clone git@github.com:NinoMaruszewski/.dotfiles.git ~/.dotfiles
+    $ git clone https://github.com/MrAwesomeRocks/.dotfiles.git ~/.dotfiles
     ```
 2. Move to repo
     ```sh
