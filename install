@@ -12,4 +12,24 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" --plugin-dir ./dotbot-sudo/ --plugin-dir ./dotbot_plugin_aptget/ "${@}"
+# Detect platform
+platform="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+case "${platform}" in
+msys_nt*) platform="win" ;;
+cygwin_nt*) platform="win" ;;
+# mingw is Git-Bash
+mingw*) platform="win" ;;
+# use the statically compiled musl bins on linux to avoid linking issues.
+darwin) platform="apple" ;;
+linux) platform="linux" ;;
+freebsd) platform="linux" ;;
+esac
+
+if [[ $platform -eq "win" ]]; then
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"  # no sudo or apt
+elif [[ $platform -eq "apple" ]]; then
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" --plugin-dir ./dotbot-sudo/ "${@}"  # only sudo
+else
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" --plugin-dir ./dotbot-sudo/ --plugin-dir ./dotbot_plugin_aptget/ "${@}"
+fi

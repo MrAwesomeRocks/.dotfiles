@@ -1,0 +1,44 @@
+# duration module
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+show_notifications = true
+
+# shows memory usage
+[memory_usage]
+disabled = false
+threshold = 0
+symbol = "📝"
+format = "with $symbol [${ram_pct} | ${swap_pct}]($style) "
+
+# Fix python venv formatting
+[python]
+format = "via [${symbol}${pyenv_prefix}(${version} )($virtualenv)]($style)"
+
+# Show currently active shell
+[shell]
+powershell_indicator = "_"
+bash_indicator = '\$'
+fish_indicator = ""
+disabled = false
+
+# Show exit code of last command (if error)
+[status]
+map_symbol = true
+disabled = false
+
+[directory]
+truncation_symbol = "…/"
+
+# Battery symbol
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]  # "bold green" style when capacity is over 30%
+threshold = 100
+style = "bold green"

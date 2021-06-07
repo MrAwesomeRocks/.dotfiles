@@ -8,6 +8,7 @@
     ~/.bash_aliases: bash_aliases
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
+    ~/.config/starship.toml: starship.toml
     ~/.emacs: emacs
     ~/.gitattributes_global: gitattributes_global
     ~/.gitconfig: gitconfig
@@ -39,4 +40,8 @@
             if ! which tldr; then curl -o /bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr && chmod +x /bin/tldr; fi,
             Downloading TLDR.,
           ]
-    - aptget: [emacs]
+        - [
+            if ! which starship; then sh -c "$(curl -fsSL https://starship.rs/install.sh)",
+            Downloading starship,
+          ]
+    - aptget: [emacs, htop]
