@@ -7,7 +7,7 @@
 [core]
 	excludesfile = C:/Users/ninom/.gitignore_global
 	autocrlf = input
-	attributesfile = C:\\Users\\ninom\\.gitattributes_global
+	attributesfile = C:/Users/ninom/.gitattributes_global
 
 [commit]
 	gpgsign = true
