@@ -141,6 +141,9 @@ if [[ -z $(uname -s | grep MINGW) ]]; then
     . $HOME/.asdf/completions/asdf.bash
 fi
 
+# Starship
+eval "$(starship init bash)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/c/Users/ninom/.sdkman"
 [[ -s "/c/Users/ninom/.sdkman/bin/sdkman-init.sh" ]] && source "/c/Users/ninom/.sdkman/bin/sdkman-init.sh"
