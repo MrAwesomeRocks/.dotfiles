@@ -1,3 +1,6 @@
+# Make starship have more time for commands
+command_timeout = 1000
+
 # duration module
 [cmd_duration]
 min_time = 0
