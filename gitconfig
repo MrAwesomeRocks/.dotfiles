@@ -1,7 +1,6 @@
 # Includes for custom config files:
 [includeIf "gitdir:**/BitBucket/**/.git"]
 	path = ~/.gitconfig_bitbucket
-
 [includeIf "gitdir:**/GitHub/**/.git"]
 	path = ~/.gitconfig_github
 [core]
@@ -9,7 +8,6 @@
 	autocrlf = input
 	attributesfile = C:/Users/ninom/.gitattributes_global
 	editor = nano
-
 [commit]
 	gpgsign = true
 [filter "lfs"]
@@ -22,3 +20,5 @@
 [user]
 	name = Nino Maruszewski
 	email = nino.maruszewski@gmail.com
+[tag]
+	gpgSign = true
