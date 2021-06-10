@@ -144,6 +144,11 @@ fi
 # Starship
 eval "$(starship init bash)"
 
+# virtualenvwrapper
+export WORKON_HOME=~/.envs
+export MSYS_HOME=/c/msys64/
+source /mingw64/bin/virtualenvwrapper.sh
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/c/Users/ninom/.sdkman"
 [[ -s "/c/Users/ninom/.sdkman/bin/sdkman-init.sh" ]] && source "/c/Users/ninom/.sdkman/bin/sdkman-init.sh"

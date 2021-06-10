@@ -11,10 +11,6 @@ threshold = 0
 symbol = "📝"
 format = "with $symbol [${ram_pct} | ${swap_pct}]($style) "
 
-# Fix python venv formatting
-[python]
-format = "via [${symbol}${pyenv_prefix}(${version} )($virtualenv)]($style)"
-
 # Show currently active shell
 [shell]
 powershell_indicator = "_"
