@@ -143,10 +143,11 @@ fi
 
 # Starship
 eval "$(starship init bash)"
+export STARSHIP_CONFIG=~/.config/starship.toml
 
 # virtualenvwrapper
 export WORKON_HOME=~/.envs
-export MSYS_HOME=/c/msys64/
+export VIRTUALENVWRAPPER_WORKON_CD=0
 source /mingw64/bin/virtualenvwrapper.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
