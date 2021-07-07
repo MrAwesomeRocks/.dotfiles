@@ -135,10 +135,11 @@ export MAVEN_HOME=$M2_HOME
 # Pipenv stuff
 export PIPENV_VENV_IN_PROJECT=true
 
-# ASDF stuff
+# ASDF and path stuff
 if [[ -z $(uname -s | grep -E "(MINGW|MSYS)") ]]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
+    export PATH=~/.local/bin:$PATH
 fi
 
 # Starship
@@ -148,8 +149,10 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 # virtualenvwrapper
 export WORKON_HOME=~/.envs
 export VIRTUALENVWRAPPER_WORKON_CD=0
-source "/mingw64/bin/virtualenvwrapper.sh" || source `which virtualenvwrapper_lazy.sh`
+source "/mingw64/bin/virtualenvwrapper.sh" &> /dev/null || source `which virtualenvwrapper_lazy.sh`
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/c/Users/ninom/.sdkman"
 [[ -s "/c/Users/ninom/.sdkman/bin/sdkman-init.sh" ]] && source "/c/Users/ninom/.sdkman/bin/sdkman-init.sh"
+
+true
